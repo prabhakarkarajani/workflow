@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import resetAuthState_action from '../../actions/authAction';
-
 import Header from '../Header';
+
 function Layout(props) {
   return (
     <React.Fragment>

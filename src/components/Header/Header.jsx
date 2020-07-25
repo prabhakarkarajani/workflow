@@ -37,7 +37,7 @@ function Header(props) {
         localStorage.removeItem('user');
         history.push('/')
     }
-    const show = (history.location && history.location.pathname === '/createWorkFlow')
+    const show = (history.location && history.location.pathname === '/createWorkFlow');
     return (
         <div className={classes.root}>
             <AppBar position="static" className={classes.headerContainer}>
@@ -48,7 +48,7 @@ function Header(props) {
             </Typography>
                    {show && 
                     (<Button color="default" variant="contained" onClick={()=>{ history.push('/')}} className={classes.goBack}>Go Back</Button>)}
-                    <Button color="default" variant="contained" onClick={onLogoutHandler}>Log out</Button>
+                    {!props.hideLogout && <Button color="default" variant="contained" onClick={onLogoutHandler}>Log out</Button>}
                 </Toolbar>
             </AppBar>
         </div>

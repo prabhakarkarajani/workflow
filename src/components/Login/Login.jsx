@@ -14,6 +14,7 @@ import {
     Checkbox,
     FormControlLabel
 } from '@material-ui/core';
+import Header from '../Header';
 
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
@@ -25,7 +26,7 @@ import { history } from '../../helpers';
 const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275,
-        marginTop: '100pt',
+        marginTop: '75pt',
         padding: '20pt 10pt'
     },
     bullet: {
@@ -76,7 +77,9 @@ function Login() {
     const [isRememberMe, setIsRememberMe] = useState(false);
     const preventDefault = (event) => event.preventDefault();
     return (
-        <Container maxWidth="sm" >
+        <React.Fragment>
+            <Header hideLogout={true} />
+            <Container maxWidth="sm" >
             <Grid item xs={12} style={{ textAlign: "center", verticalAlign: "middle" }}>
                 <Card className={classes.root} variant="outlined">
                     <Typography variant="h6" gutterBottom className={clsx(classes.loginTitle)}>
@@ -175,6 +178,8 @@ function Login() {
                 </Card>
             </Grid>
         </Container>
+        </React.Fragment>
+        
     )
 }
 export default Login;
